@@ -40,6 +40,10 @@ func newHandler(tickspeed time.Duration) *handler {
 }
 
 func (h *handler) Start(verbose bool) {
+	fmt.Println("Starting Log-Handler...")
+	fmt.Println("#-----------------------------------------------#")
+	fmt.Println("")
+
 	if verbose {
 		h.Lvl = slog.LevelDebug
 	}
