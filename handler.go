@@ -40,8 +40,8 @@ func newHandler(tickspeed time.Duration) *handler {
 }
 
 func (h *handler) Start(verbose bool) {
+	fmt.Println("")
 	fmt.Println("Starting Log-Handler...")
-	fmt.Println("#-----------------------------------------------#")
 	fmt.Println("")
 
 	if verbose {
@@ -120,6 +120,8 @@ func (h *handler) Join() {
 			break
 		}
 	}
+
+	fmt.Println("")
 }
 
 var Handler = newHandler(10)
