@@ -1,17 +1,18 @@
 # go-logs
 An Async Logging utility, for non blocking logs
 
+> [About Publishing Go-Modules](https://go.dev/blog/publishing-go-modules)
 
 ## Usage
 
 ### Handler
 
 ```go
-logs.Handler.Start()
+logs.Handler.Start() // At the start of the Program, starts the Log-Handler Go-Routine and creates the Log-Channels
 
 //....
 
-logs.Handler.Join()
+logs.Handler.Join() // At the End of the Program, Waits for all submitted Print Jobs to be finished an closes channels
 
 ```
 

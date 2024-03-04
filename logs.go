@@ -31,6 +31,11 @@ func SendLog(ch MessageChannel, log_msg string, data []any) {
 	ch <- &Message{Msg: log_msg, Data: dm}
 }
 
+func Println(val any) {
+	str := fmt.Sprint(val)
+	Handler.Channel.StdOut <- &str
+}
+
 func Debug(log_msg string, data ...any) {
 	SendLog(Handler.Channel.Debug, log_msg, data)
 }

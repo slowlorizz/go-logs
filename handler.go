@@ -78,6 +78,9 @@ parent_loop:
 				break parent_loop
 			}
 
+		case v := <-h.Channel.StdOut:
+			fmt.Println(v)
+
 		case v := <-h.Channel.Debug:
 			if h.Lvl == slog.LevelDebug {
 				h.writeMsg(0, v)
